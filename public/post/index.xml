@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Leo&#39;s sharing space</title>
-        <link>https://example.org/post/</link>
+        <link>http://localhost:1313/post/</link>
         <description>Recent content in Posts on Leo&#39;s sharing space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 13 May 2025 00:53:25 +0800</lastBuildDate><atom:link href="https://example.org/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 13 May 2025 00:53:25 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Moment</title>
-        <link>https://example.org/post/moment/</link>
+        <link>http://localhost:1313/post/moment/</link>
         <pubDate>Tue, 13 May 2025 00:53:25 +0800</pubDate>
         
-        <guid>https://example.org/post/moment/</guid>
-        <description>&lt;img src="https://example.org/post/moment/Minecraft_DH.png" alt="Featured image of post Moment" /&gt;&lt;p&gt;For a random variable $X$, The $n$-th moments of $X$ is $E(X^n)$. Why we need moment? Let’s starts with the measurements used in describing a distribution.&lt;/p&gt;
+        <guid>http://localhost:1313/post/moment/</guid>
+        <description>&lt;img src="http://localhost:1313/post/moment/Minecraft_DH.png" alt="Featured image of post Moment" /&gt;&lt;p&gt;For a random variable $X$, The $n$-th moments of $X$ is $E(X^n)$. Why we need moment? Let’s starts with the measurements used in describing a distribution.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The mean, which is $\textstyle\sum_{j=1}^n m_jx_j$ , is called a measure of central tendency because it tells us something about the center of a distribution. It is the $1$-th moment of random variable X.&lt;/p&gt;
