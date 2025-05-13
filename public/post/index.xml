@@ -2,32 +2,132 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Leo&#39;s sharing space</title>
-        <link>http://localhost:1313/post/</link>
+        <link>https://example.org/post/</link>
         <description>Recent content in Posts on Leo&#39;s sharing space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 13 May 2025 00:53:25 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Moment</title>
-        <link>http://localhost:1313/post/moment/</link>
+        <lastBuildDate>Tue, 13 May 2025 20:14:20 +0800</lastBuildDate><atom:link href="https://example.org/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Taylor Expansion / Series and Power Series</title>
+        <link>https://example.org/post/taylor_expansion/</link>
+        <pubDate>Tue, 13 May 2025 20:14:20 +0800</pubDate>
+        
+        <guid>https://example.org/post/taylor_expansion/</guid>
+        <description>&lt;img src="https://example.org/post/taylor_expansion/Figure.jpg" alt="Featured image of post Taylor Expansion / Series and Power Series" /&gt;&lt;h2 id=&#34;taylor-expansion--series&#34;&gt;Taylor Expansion / Series
+&lt;/h2&gt;&lt;p&gt;In mathematics, the Taylor expansion / series of a function is an infinite sum of terms that are expressed in terms of the function&amp;rsquo;s derivatives at a single point. For most common functions, the function and the sum of its Taylor series are equal near this point.&lt;/p&gt;
+&lt;p&gt;Suppose $f(x)$ is a real or composite function, which is a differentiable function of a neighborhood of the point $a$. The Taylor series of $f(x)$ about the point $a$ is given by:&lt;/p&gt;
+&lt;p&gt;$$f(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime\prime}(a)}{2!}(x-a)^2+\frac{f^{\prime\prime\prime}(a)}{3!}(x-a)^3+\dots$$&lt;/p&gt;
+&lt;p&gt;Where $n!$ denotes the factorial of $n$. In the more compact sigma notation, this can be written as:
+$$f(x)=\sum_{n=0}^\infin\frac{f^{(n)}(a)}{n!}(x-a)^n$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;: the power series for $e^x$ is:
+$$e^x=\sum_{n=0}^\infty \frac{x^n}{n!}$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;As the derivative of $e^x$ is itself:
+$$f^{(n)}(x)=e^x$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Taking the derivative at $x=0$:
+$$f^{(n)}(0)=e^0=1$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using Taylor expansion, set $a=0$:
+$$f(x)=\sum_{n=0}^\infin\frac{f^{(n)}(a)}{n!}(x-a)^n=\sum_{n=0}^\infin\frac{x^n}{n!}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;In summary&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Taylor expansion is a way to &lt;strong&gt;approximate&lt;/strong&gt; a function using infinitely many polynomial terms.&lt;/p&gt;
+&lt;h2 id=&#34;power-series&#34;&gt;Power Series
+&lt;/h2&gt;&lt;p&gt;A power series is an infinite series of the form:
+$$\sum_{n=0}^\infty a_n(x-a)^n$$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$a_n$ are the coefficients of the series&lt;/li&gt;
+&lt;li&gt;$x$ is the variable&lt;/li&gt;
+&lt;li&gt;$a$ is a constant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;: the power series for $sin(x)$ is:
+$$sin(x)=\sum_{n=0}^\infin\frac{(-1)^nx^{2n+1}}{(2n+1)!}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^11}{11!}+\dots$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Using the Taylor expansion with $a=0$:
+$$f(x)=sin(x)=\sum_{n=0}^\infin\frac{f^{(n)}(0)}{n!}(x)^n$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Compute the derivatives of $sin(x)$ at $x=0$:
+$$f(0)=sin(0)=0$$
+$$f^{(1)}(0)=cos(0)=1$$
+$$f^{(2)}(0)=-sin(0)=0$$
+$$f^{(3)}(0)=-cos(0)=-1$$
+$$f^{(4)}(0)=sin(0)=0$$
+$$f^{(5)}(0)=cos(0)=1$$
+$$f^{(6)}(0)=-sin(0)=0$$
+$$f^{(7)}(0)=-cos(0)=-1$$
+$$\dots$$
+You can see that only the odd derivatives are non-zero, and they alternate in sign.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Plug into the Taylor expansion:
+$$f(x)=\sum_{n=0}^\infin\frac{f^{(n)}(0)}{n!}(x)^n=\sum_{n=0}^\infin\frac{(-1)^nx^{2n+1}}{(2n+1)!}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;In Summary&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every Taylor series is a power series, but not every power series is a Taylor series.&lt;/li&gt;
+&lt;li&gt;Power series serve as a broad framework, while Taylor series are tailored (pun intended!) to approximate specific functions using their derivatives.&lt;/li&gt;
+&lt;li&gt;The convergence of a Taylor series to its function depends on the function being analytic (i.e., equal to its Taylor series in some neighborhood).&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Moments in Probability</title>
+        <link>https://example.org/post/moments/</link>
         <pubDate>Tue, 13 May 2025 00:53:25 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/moment/</guid>
-        <description>&lt;img src="http://localhost:1313/post/moment/Minecraft_DH.png" alt="Featured image of post Moment" /&gt;&lt;p&gt;For a random variable $X$, The $n$-th moments of $X$ is $E(X^n)$. Why we need moment? Let’s starts with the measurements used in describing a distribution.&lt;/p&gt;
-&lt;ul&gt;
+        <guid>https://example.org/post/moments/</guid>
+        <description>&lt;img src="https://example.org/post/moments/Minecraft_DH.png" alt="Featured image of post Moments in Probability" /&gt;&lt;h2 id=&#34;moments-in-probability&#34;&gt;Moments in Probability
+&lt;/h2&gt;&lt;p&gt;For a random variable $X$, The $n$-th moments of $X$ is the expectation of $X^n$, which is $\mathbb{E}[X^n]$.&lt;/p&gt;
+&lt;p&gt;Why we need moment? Let’s starts with some measures we often use to describe a distribution.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mean:&lt;/strong&gt; $\mu=\mathbb{E}[X]$. &lt;em&gt;Mean&lt;/em&gt; measures the central tendency. It tells us something about the center of a distribution. It is the $1$-th moment of $X$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Variance:&lt;/strong&gt; $\sigma=\mathbb{E}[X-\mu]^2$, &lt;em&gt;Variance&lt;/em&gt; measures of dispersion. It is a measure of how far a set of numbers is spread out from their average value. It is the $2$-nd moment of $X-\mu$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Skewness:&lt;/strong&gt; $Skew(X)=\mathbb{E}[\frac{X-\mu}{\sigma}]^3$. &lt;em&gt;Skewness&lt;/em&gt; measures the level of asymmetry level of a distribution. It is the $3$-rd moment of standardized $X$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kurtosis:&lt;/strong&gt;: $Kurt(X)=\mathbb{E}[\frac{X-μ}{σ}]^4-3$. &lt;em&gt;Kurtosis&lt;/em&gt; measures the tail’s heavy level of a distribution. It is the $4$-th moment of standardized $X$. The reason for subtracting 3 is to make any Normal distribution have kurtosis of 0.&lt;/p&gt;
+&lt;p&gt;As we can see from the example, moment could be used to measure the characteristics of distributions.&lt;/p&gt;
+&lt;h2 id=&#34;sample-moments&#34;&gt;Sample moments
+&lt;/h2&gt;&lt;p&gt;In previous section, we used some examples to introduce the moment, and why we need it. We used $\mathbb{E}[X]$, which is the $1$-st moment of $X$, to represent the mean. Back to primary school, we were taught to use $\bar{X}=\frac{1}{n}\sum_{i=1}^nx_i$ to calculate the mean of a observed data. For example, if we observe a list of $[1,3,4,2,2,6]$, the mean of this list would be $(1+3+4+2+2+6)/6=3$. Here is the question, what is the difference between $\mathbb{E}[X]$ and $\bar{X}$?&lt;/p&gt;
+&lt;p&gt;In probability, we use $\mathbb{E}[X]$ to represent the mean of a random variable $X$. In statistics, we use $\bar{X}$ to represent the mean of a observed data (sampled data, also called sample). $\mathbb{E}[X]$ is the population mean of a random variable. Let&amp;rsquo;s say $X \backsim N(0,1)$, then the $\mathbb{E}[X]$ is equal to $0$. While $\bar{X}$ is the sample mean of a observed data. In the real situation, we can only observe a sample of $X$, not the whole population. Therefore, the $\bar{X}$ calculated from $\frac{1}{n}\sum_{i=1}^nx_i$ might not eactly equal to $0$. As the sample mean $\bar{X}$ is an estimate of the population mean $\mathbb{E}[X]$.&lt;/p&gt;
+&lt;p&gt;Similarly, the sample variance is defined as:
+$$ S_n^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2 $$
+The sample variance $S_n^2$ is an estimate of the population variance $\sigma^2$. The sample variance is an unbiased estimator of the population variance. The reason for using $n-1$ instead of $n$ is to make the sample variance an unbiased estimator of the population variance. If we use $n$, then the sample variance would be biased.&lt;/p&gt;
+&lt;p&gt;Similarly, we can define the &lt;em&gt;sample skewness&lt;/em&gt; as:
+$$ S_n^3=\frac{1}{n}\sum_{i=1}^n(\frac{x_i-\bar{x}}{S_n})^3 $$
+and the &lt;em&gt;sample kurtosis&lt;/em&gt; as:
+$$ S_n^4=\frac{1}{n}\sum_{i=1}^n(\frac{x_i-\bar{x}}{S_n})^4-3 $$&lt;/p&gt;
+&lt;h2 id=&#34;moment-generating-functions&#34;&gt;Moment generating functions
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Moment via derivatives of the MGF). The moment generating function (MGF) of a random variable $X$ is defined as:
+$$ M_X(t)=\mathbb{E}[e^{tX}] $$
+Given the MGF of $X$, we can get the $n$-th moment of $X$ by taking the $n$-th derivative of the MGF and evaluating it at $t=0$: $$\mathbb{E}[X^n]=M^{(n)}(0)$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;.&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;The mean, which is $\textstyle\sum_{j=1}^n m_jx_j$ , is called a measure of central tendency because it tells us something about the center of a distribution. It is the $1$-th moment of random variable X.&lt;/p&gt;
+&lt;p&gt;Using Taylor expansion of $M_X(t)$ around $t=0$:
+$$M_X(t)=\mathbb{E}[e^{tX}]=\sum_{n=0}^\infin M^{(0)}(0)\frac{t^n}{n!} \tag{1}$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The variance of a distribution, which is $Var(X)=\textstyle\sum_{j=1}^n m_j(x_j-E(X))^2$, is a measure of dispersion, meaning it is a measure of how far a set of numbers is spread out from their average value. It is the $2$-nd moment of random variable $X-μ=X-E(X)$.&lt;/p&gt;
+&lt;p&gt;Using Power series expansion of $e^{tX}$:
+$$e^{tX}=\sum_{n=0}^\infin \frac{(tX)^n}{n!}=\sum_{n=0}^\infin \frac{t^nX^n}{n!}$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The skewness of a distribution, which is $Skew(X)=E(\frac{X-μ}{σ})^3$, measures the level of asymmetry level of a distribution. It is the $3$-rd moment of standardized random variable $\frac{X-μ}{σ}$.&lt;/p&gt;
+&lt;p&gt;So the expectation of $e^{tX}$ is:
+$$\mathbb{E}[e^{tX}]=\sum_{n=0}^\infin \frac{t^n}{n!}\mathbb{E}[X^n] \tag{2}$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The kurtosis of a distribution, which is $Kurt(X)=E(\frac{X-μ}{σ})^4-3$, measures the tail’s heavy level of a distribution. It is the $4$-th moment of standardized random variable $\frac{X-μ}{σ}$. The reason for subtracting 3 is to make any Normal distribution have kurtosis of 0.&lt;/p&gt;
+&lt;p&gt;Comparing (1) and (2), we can get:
+$$\mathbb{E}[X^n]=M^{(n)}(0)$$&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The answer is very clear now, the reason we define moment for random variable is, it could be used to measure and compare the characteristics of distributions.&lt;/p&gt;
+&lt;/ol&gt;
+&lt;p&gt;This theorem is suprising in that for a continuous random variable $X$, to compute moments would seemingly require doing integrals with LOTUS, but with the MGF, it is possible to find moments by taking derivatives rather than doing integrals.&lt;/p&gt;
 </description>
         </item>
         

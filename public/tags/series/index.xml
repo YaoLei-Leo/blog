@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Series on Leo&#39;s sharing space</title>
+        <link>https://example.org/tags/series/</link>
+        <description>Recent content in Series on Leo&#39;s sharing space</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 13 May 2025 20:14:20 +0800</lastBuildDate><atom:link href="https://example.org/tags/series/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Taylor Expansion / Series and Power Series</title>
+        <link>https://example.org/post/taylor_expansion/</link>
+        <pubDate>Tue, 13 May 2025 20:14:20 +0800</pubDate>
+        
+        <guid>https://example.org/post/taylor_expansion/</guid>
+        <description>&lt;img src="https://example.org/post/taylor_expansion/Figure.jpg" alt="Featured image of post Taylor Expansion / Series and Power Series" /&gt;&lt;h2 id=&#34;taylor-expansion--series&#34;&gt;Taylor Expansion / Series
+&lt;/h2&gt;&lt;p&gt;In mathematics, the Taylor expansion / series of a function is an infinite sum of terms that are expressed in terms of the function&amp;rsquo;s derivatives at a single point. For most common functions, the function and the sum of its Taylor series are equal near this point.&lt;/p&gt;
+&lt;p&gt;Suppose $f(x)$ is a real or composite function, which is a differentiable function of a neighborhood of the point $a$. The Taylor series of $f(x)$ about the point $a$ is given by:&lt;/p&gt;
+&lt;p&gt;$$f(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime\prime}(a)}{2!}(x-a)^2+\frac{f^{\prime\prime\prime}(a)}{3!}(x-a)^3+\dots$$&lt;/p&gt;
+&lt;p&gt;Where $n!$ denotes the factorial of $n$. In the more compact sigma notation, this can be written as:
+$$f(x)=\sum_{n=0}^\infin\frac{f^{(n)}(a)}{n!}(x-a)^n$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;: the power series for $e^x$ is:
+$$e^x=\sum_{n=0}^\infty \frac{x^n}{n!}$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;As the derivative of $e^x$ is itself:
+$$f^{(n)}(x)=e^x$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Taking the derivative at $x=0$:
+$$f^{(n)}(0)=e^0=1$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using Taylor expansion, set $a=0$:
+$$f(x)=\sum_{n=0}^\infin\frac{f^{(n)}(a)}{n!}(x-a)^n=\sum_{n=0}^\infin\frac{x^n}{n!}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;In summary&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Taylor expansion is a way to &lt;strong&gt;approximate&lt;/strong&gt; a function using infinitely many polynomial terms.&lt;/p&gt;
+&lt;h2 id=&#34;power-series&#34;&gt;Power Series
+&lt;/h2&gt;&lt;p&gt;A power series is an infinite series of the form:
+$$\sum_{n=0}^\infty a_n(x-a)^n$$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$a_n$ are the coefficients of the series&lt;/li&gt;
+&lt;li&gt;$x$ is the variable&lt;/li&gt;
+&lt;li&gt;$a$ is a constant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;: the power series for $sin(x)$ is:
+$$sin(x)=\sum_{n=0}^\infin\frac{(-1)^nx^{2n+1}}{(2n+1)!}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^11}{11!}+\dots$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Using the Taylor expansion with $a=0$:
+$$f(x)=sin(x)=\sum_{n=0}^\infin\frac{f^{(n)}(0)}{n!}(x)^n$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Compute the derivatives of $sin(x)$ at $x=0$:
+$$f(0)=sin(0)=0$$
+$$f^{(1)}(0)=cos(0)=1$$
+$$f^{(2)}(0)=-sin(0)=0$$
+$$f^{(3)}(0)=-cos(0)=-1$$
+$$f^{(4)}(0)=sin(0)=0$$
+$$f^{(5)}(0)=cos(0)=1$$
+$$f^{(6)}(0)=-sin(0)=0$$
+$$f^{(7)}(0)=-cos(0)=-1$$
+$$\dots$$
+You can see that only the odd derivatives are non-zero, and they alternate in sign.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Plug into the Taylor expansion:
+$$f(x)=\sum_{n=0}^\infin\frac{f^{(n)}(0)}{n!}(x)^n=\sum_{n=0}^\infin\frac{(-1)^nx^{2n+1}}{(2n+1)!}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;In Summary&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every Taylor series is a power series, but not every power series is a Taylor series.&lt;/li&gt;
+&lt;li&gt;Power series serve as a broad framework, while Taylor series are tailored (pun intended!) to approximate specific functions using their derivatives.&lt;/li&gt;
+&lt;li&gt;The convergence of a Taylor series to its function depends on the function being analytic (i.e., equal to its Taylor series in some neighborhood).&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

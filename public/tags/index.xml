@@ -2,16 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on Leo&#39;s sharing space</title>
-        <link>http://localhost:1313/tags/</link>
+        <link>https://example.org/tags/</link>
         <description>Recent content in Tags on Leo&#39;s sharing space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 13 May 2025 00:53:25 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Moment</title>
-        <link>http://localhost:1313/tags/moment/</link>
+        <lastBuildDate>Tue, 13 May 2025 20:14:20 +0800</lastBuildDate><atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Expansion</title>
+        <link>https://example.org/tags/expansion/</link>
+        <pubDate>Tue, 13 May 2025 20:14:20 +0800</pubDate>
+        
+        <guid>https://example.org/tags/expansion/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Series</title>
+        <link>https://example.org/tags/series/</link>
+        <pubDate>Tue, 13 May 2025 20:14:20 +0800</pubDate>
+        
+        <guid>https://example.org/tags/series/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Moments</title>
+        <link>https://example.org/tags/moments/</link>
         <pubDate>Tue, 13 May 2025 00:53:25 +0800</pubDate>
         
-        <guid>http://localhost:1313/tags/moment/</guid>
+        <guid>https://example.org/tags/moments/</guid>
         <description></description>
         </item>
         
