@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Change of Variables on Leo&#39;s sharing space</title>
+        <link>http://localhost:1313/tags/change-of-variables/</link>
+        <description>Recent content in Change of Variables on Leo&#39;s sharing space</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 14 May 2025 14:35:45 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/change-of-variables/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Change_of_variables</title>
+        <link>http://localhost:1313/post/change_of_variables/</link>
+        <pubDate>Wed, 14 May 2025 14:35:45 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/change_of_variables/</guid>
+        <description>&lt;img src="http://localhost:1313/House.jpg" alt="Featured image of post Change_of_variables" /&gt;&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Change of variables in one dimension) Let $X$ be a random variable with PDF $f_X$, and let $Y=g(X)$, where $g$ is differentiable and monotonic. Then the PDF of $Y$ is given by:
+$$f_Y(y)=f_X(x)|\frac{dx}{dy}|$$
+where $x=g^-1(y)$. The support of Y is all $g(x)$ with $x$ in the support of $X$.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Suppose g is strictly increasing. Then, for $y=g(x)$, the CDF of $Y$ is:
+$$F_Y(y)=P(Y\leq y)=P(g(X)\leq y)=P(X\leq g^-1(y))=F_X(g^-1(y))=F_X(x)$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Therefore, the PDF of $Y$ is
+$$f_Y(y)=\frac{d}{dy}F_Y(y)=\frac{d}{dy}F_X(x)=\frac{dx}{dy}\frac{d}{dx}F_X(x)=f_X(x)\frac{dx}{dy}$$&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Suppose g is strictly decreasing. Then, for $y=g(x)$, the CDF of $Y$ is:
+$$F_Y(y)=P(Y\leq y)=P(g(X)\leq y)=P(X\geq g^-1(y))=1-P(X\leq g^-1(y))=1-F_X(g^-1(y))=1-F_X(x)$$
+Therefore, the PDF of $Y$ is
+$$f_Y(y)=\frac{d}{dy}F_Y(y)=-\frac{d}{dy}F_X(x)=-\frac{dx}{dy}\frac{d}{dx}F_X(x)=-f_X(x)\frac{dx}{dy}$$
+In this case, the $\frac{dx}{dy}$ is negative, so we can write:
+$$f_Y(y)=f_X(x)|\frac{dx}{dy}|$$&lt;/li&gt;
+&lt;li&gt;Combine the two cases:
+$$f_Y(y)=f_X(x)|\frac{dx}{dy}|$$
+where $x=g^-1(y)$. The support of Y is all $g(x)$ with $x$ in the support of $X$.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>LOTUS on Leo&#39;s sharing space</title>
+        <link>http://localhost:1313/tags/lotus/</link>
+        <description>Recent content in LOTUS on Leo&#39;s sharing space</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 14 May 2025 15:10:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/lotus/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>LOTUS</title>
+        <link>http://localhost:1313/post/lotus/</link>
+        <pubDate>Wed, 14 May 2025 15:10:48 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/lotus/</guid>
+        <description>&lt;img src="http://localhost:1313/post/lotus/windmill.png" alt="Featured image of post LOTUS" /&gt;&lt;h2 id=&#34;definition-of-expectation&#34;&gt;Definition of expectation
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Definition (Expectation of a discrete random variable)&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The expected value of a discrete random variable $X$ whose distinct possible values are $x_1, x_2, \ldots$ is defined by
+$$\mathbb E[X] = \sum_{i} x_i P(X = x_i) = \sum_{i} x_i f_X(x_i)$$
+where $f_X(x)$ is the probability mass function of $X$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The expected value of a continuous random variable $X$ is defined by
+$$\mathbb E[X] = \int_{-\infty}^{\infty} x f_X(x) dx$$
+where $f_X(x)$ is the probability density function of $X$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;law-of-unconscious-statistician-lotus&#34;&gt;Law of unconscious statistician (LOTUS)
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Theorem (LOTUS)&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;If $X$ is a discrete random variable, and $g$ is a function from $\mathbb R$ to $\mathbb R$. If $Y=g(X)$, then
+$$\mathbb E[Y] = \mathbb E[g(X)] = \sum_{x} g(x) P(X = x) = \sum_{x} g(x) f_X(x)$$
+where $f_X(x)$ is the probability mass function (PMF) of $X$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If $X$ is a continuous random variable, and $g$ is a function from $\mathbb R$ to $\mathbb R$. If $Y=g(X)$, then
+$$\mathbb E[Y] = \mathbb E[g(X)] = \int_{-\infty}^{\infty} g(x) f_X(x) dx$$
+where $f_X(x)$ is the probability density function (PDF) of $X$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;why-lotus&#34;&gt;Why LOTUS?
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Example 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$X \sim Exponential(\lambda)$&lt;/li&gt;
+&lt;li&gt;$Y=log(X)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If we use the definition of expectation to calculate $\mathbb E[Y]$, we can first calculate the PDF of $Y$:
+$$f_Y(y) = \frac{d}{dy} P(Y \leq y) = \frac{d}{dy} P(X \leq e^y) = \frac{d}{dy} (1 - e^{-\lambda e^y})$$
+$$= \lambda e^{-\lambda e^y} e^y = \lambda e^{-\lambda e^y + y}$$&lt;/p&gt;
+&lt;p&gt;Then we can calculate $\mathbb E[Y]$:
+$$\mathbb E[Y] = \int_{-\infty}^{\infty} y f_Y(y) dy = \int_{-\infty}^{\infty} y \lambda e^{-\lambda e^y + y} dy$$&lt;/p&gt;
+&lt;p&gt;However, LOTUS could make it easier:
+$$\mathbb E[Y] = \mathbb E[log(X)] = \int_{0}^{\infty} log(x) \lambda e^{-\lambda x} dx$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$X \sim N(0,1)$&lt;/li&gt;
+&lt;li&gt;$Y = sin(X)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If we use the definition of expectation to calculate $\mathbb E[Y]$, we can first calculate the PDF of $Y$:
+$$f_Y(y) = \frac{d}{dy} P(Y \leq y) = \frac{d}{dy} P(X \leq sin^{-1}(y))$$
+However, there’s no closed-form PDF for $Y$ as we cannot write the analytic form of $sin^{-1}(y)$. It’s a complicated, oscillatory transformation of a normal variable. You can’t write down $f_Y(y)$ analytically. Consequently, we cannot calculate $\mathbb E[Y]$ using the definition of expectation.&lt;/p&gt;
+&lt;p&gt;However, we can use LOTUS:
+$$\mathbb E[Y] = \mathbb E[sin(X)] = \int_{-\infty}^{\infty} sin(x) f_X(x) dx = \int_{-\infty}^{\infty} sin(x) \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} dx$$
+This is a analytically solvable integral. The result is $0$ because the integrand is an odd function and the limits are symmetric about $0$.&lt;/p&gt;
+&lt;h2 id=&#34;in-summary&#34;&gt;In summary
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;LOTUS is a powerful tool for calculating the expected value of a function of a random variable.&lt;/li&gt;
+&lt;li&gt;It allows us to avoid the need to find the PDF of the transformed variable.&lt;/li&gt;
+&lt;li&gt;It can simplify the calculation of expected values for complex transformations.&lt;/li&gt;
+&lt;li&gt;It is applicable to both discrete and continuous random variables.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
