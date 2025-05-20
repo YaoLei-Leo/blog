@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Beta distribution\rThe Beta distribution is a continuous distribution on the interval (0,1). It is a generalization of the Unif(0,1) distribution.\nAn random variable $X$ is said to have the Beta distribution with parameters $a$ and $b$, where $a,b &gt; 0$, if its probability density function (PDF) is:\n$$f(x)=\\frac{1}{\\beta(a,b)}x^{a-1}(1-x)^{b-1},\\quad0&lt;x&lt;1$$\n$\\beta(a,b)$ is the beta function. It is a constant that chosen to make the PDF integrate to 1. We write this as $X \\sim \\text{Beta}(a,b)$.\n">
+<title>Beta distribution</title>
+
+<link rel='canonical' href='http://localhost:1313/post/beta_distribution/'>
+
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="Beta distribution">
+<meta property='og:description' content="Beta distribution\rThe Beta distribution is a continuous distribution on the interval (0,1). It is a generalization of the Unif(0,1) distribution.\nAn random variable $X$ is said to have the Beta distribution with parameters $a$ and $b$, where $a,b &gt; 0$, if its probability density function (PDF) is:\n$$f(x)=\\frac{1}{\\beta(a,b)}x^{a-1}(1-x)^{b-1},\\quad0&lt;x&lt;1$$\n$\\beta(a,b)$ is the beta function. It is a constant that chosen to make the PDF integrate to 1. We write this as $X \\sim \\text{Beta}(a,b)$.\n">
+<meta property='og:url' content='http://localhost:1313/post/beta_distribution/'>
+<meta property='og:site_name' content='Leo&#39;s sharing space'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='distribution' /><meta property='article:published_time' content='2025-05-14T15:10:48&#43;08:00'/><meta property='article:modified_time' content='2025-05-14T15:10:48&#43;08:00'/><meta property='og:image' content='http://localhost:1313/post/beta_distribution/logcabin.jpg' />
+<meta name="twitter:title" content="Beta distribution">
+<meta name="twitter:description" content="Beta distribution\rThe Beta distribution is a continuous distribution on the interval (0,1). It is a generalization of the Unif(0,1) distribution.\nAn random variable $X$ is said to have the Beta distribution with parameters $a$ and $b$, where $a,b &gt; 0$, if its probability density function (PDF) is:\n$$f(x)=\\frac{1}{\\beta(a,b)}x^{a-1}(1-x)^{b-1},\\quad0&lt;x&lt;1$$\n$\\beta(a,b)$ is the beta function. It is a constant that chosen to make the PDF integrate to 1. We write this as $X \\sim \\text{Beta}(a,b)$.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/post/beta_distribution/logcabin.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="https://i1.rgstatic.net/ii/profile.image/11431281228856658-1710248350364_Q128/Yao-Lei-2.jpg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">👍</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Leo&#39;s sharing space</a></h1>
+            <h2 class="site-description">Mathematics is the most beautiful tool we have made.</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/beta_distribution/">
+                <img src="/post/beta_distribution/logcabin_hu8267976285889477847.jpg"
+                        srcset="/post/beta_distribution/logcabin_hu8267976285889477847.jpg 800w, /post/beta_distribution/logcabin_hu13663090779980309861.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post Beta distribution" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/beta_distribution/">Beta distribution</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 14, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="beta-distribution">Beta distribution
+</h2><p>The Beta distribution is a continuous distribution on the interval (0,1). It is a generalization of the Unif(0,1) distribution.</p>
+<p>An random variable $X$ is said to have the Beta distribution with parameters $a$ and $b$, where $a,b &gt; 0$, if its probability density function (PDF) is:</p>
+<p>$$f(x)=\frac{1}{\beta(a,b)}x^{a-1}(1-x)^{b-1},\quad0&lt;x&lt;1$$</p>
+<p>$\beta(a,b)$ is the beta function. It is a constant that chosen to make the PDF integrate to 1. We write this as $X \sim \text{Beta}(a,b)$.</p>
+<p>Taking $a=b=1$, the $Beta(1,1)$ PDF is $f(x)=1$, which is same as the uniform distribution $Unif(0,1)$, the proof is shown below.</p>
+<h2 id="beta-function">Beta function
+</h2><p>To make the PDF of Beta distribution integrate to 1. The constant $\beta(a,b)$ is defined as:</p>
+<p>$$\beta(a,b)=\int_0^1 x^{a-1}(1-x)^{b-1}dx=\frac{(a-1)!(b-1)!}{(a+b-1)!}$$</p>
+<p>$Proof.$
+Let&rsquo;s use the induction to prove the above equation.</p>
+<ol>
+<li><strong>Base Case:</strong></li>
+</ol>
+<p>For $b=1$:
+$$\beta(a,1)=\int_0^1x^{a-1}dx=\frac{1}{a}=\frac{(a-1)!(1-1)!}{(a+1-1)!}$$</p>
+<ol start="2">
+<li><strong>Recurrence Relation of the Beta Function:</strong></li>
+</ol>
+<p>Using integration by parts on $\beta(a,b)$:
+$$\beta(a,b+1)=\frac{b}{a+b}\beta(a,b)$$</p>
+<ol start="3">
+<li><strong>Inductive Step:</strong></li>
+</ol>
+<p>Let&rsquo;s assume the formula holds for $b=k$, i.e., $\beta(a,k)=\frac{(a-1)!(k-1)!}{(a+k-1)!}$.</p>
+<p>Then we have:
+$$\beta(a,k+1)=\int_0^1 x^{a-1}(1-x)^{k}dx=\int_0^1 x^{a-1}(1-x)^{k}dx$$
+As shown in 2, we can write:
+$$\beta(a,k+1)=\frac{k}{a+k}\int_0^1 x^{a-1}(1-x)^{k-1}dx$$
+$$=\frac{k}{a+k}\cdot\frac{(a-1)!(k-1)!}{(a+k-1)!}$$
+$$=\frac{(a-1)!(k)!}{(a+k)!}$$
+Thus, we have shown that if the formula holds for $b=k$, it also holds for $b=k+1$.</p>
+<ol start="4">
+<li><strong>Conclusion:</strong></li>
+</ol>
+<p>By the principle of mathematical induction, the formula holds for all positive integers $b$. Symmetrically, we can also show that the formula holds for $a$ by using the same induction process.</p>
+<h2 id="beta-binomial-conjugacy">Beta-Binomial conjugacy
+</h2><p>The Beta distribution is the conjugate prior of the Binomial distribution. This means that if we have a Binomial likelihood and a Beta prior, the posterior distribution will also be a Beta distribution.</p>
+<p>Let&rsquo;s say we have a coin that we want to test for bias. We flip the coin $n$ times and observe $k$ heads. We can model this with a Binomial distribution, where the probability of heads is $p$. The likelihood function is given by:
+$$P(X=k|p)=\binom{n}{k}p^k(1-p)^{n-k}$$
+where $X$ is the number of heads observed in $n$ flips.
+The likelihood function is a function of $p$, and it tells us how likely we are to observe $k$ heads given a particular value of $p$.</p>
+<p>For example, if we have a Binomial likelihood with parameters $n$ and $k$, and a Beta prior with parameters $a$ and $b$, the posterior distribution will be:</p>
+<p>$$f(p|X=k)=\frac{P(X=k|p)f(p)}{P(X=k)}=\frac{(_k^n)p^k(1-p)^{n-k}\cdot\frac{1}{\beta(a,b)}p^{a-1}(1-p)^{b-1}}{P(X=k)}$$
+$$=\frac{(_k^n)p^k(1-p)^{n-k}\cdot\frac{1}{\beta(a,b)}p^{a-1}(1-p)^{b-1}}{\int_0^1P(X=k|p)f(p)dp}$$</p>
+<p>It is difficult to calculate the denominator. Are we stucked here?</p>
+<p>Acutally, the calculation is much easier than it appears. The conditional PDF $f(p|X=k)$ is a function of $p$, which means everthing that desn&rsquo;t depend on $p$ is a constant. We can drop all these constants and find the PDF up to a multiplicative constant (and then the normalizing constant is whatever it needs to make the PDF integrate to 1). We can drop the $(_k^n)$, $\frac{1}{\beta(a,b)},$ and the denominator $P(X=k)$. So we can write:</p>
+<p>$$f(p|X=k)\propto p^{k+a-1}(1-p)^{n-k+b-1}$$</p>
+<p>Which is very close to the PDF of a Beta distribution $Beta(a+k, b+n-k)$, up to a multiplicative constant. Therefore, we can conclude that the posterior distribution is:</p>
+<p>$$f(p|X=k)\sim Beta(a+k, b+n-k)$$</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/distribution/">Distribution</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Leo&#39;s sharing space
+    </section>
+    
+    <section class="powerby">
+        
+            Leo's Blog <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.02c3f4ec85377ea9d286705c36bdf997c6457dbb31b65c80f83aa4d096accba2.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

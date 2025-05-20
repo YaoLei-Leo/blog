@@ -12,7 +12,7 @@
         <pubDate>Wed, 14 May 2025 14:35:45 +0800</pubDate>
         
         <guid>http://localhost:1313/post/change_of_variables/</guid>
-        <description>&lt;img src="http://localhost:1313/House.jpg" alt="Featured image of post Change_of_variables" /&gt;&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Change of variables in one dimension) Let $X$ be a random variable with PDF $f_X$, and let $Y=g(X)$, where $g$ is differentiable and monotonic. Then the PDF of $Y$ is given by:
+        <description>&lt;img src="http://localhost:1313/post/change_of_variables/House.png" alt="Featured image of post Change_of_variables" /&gt;&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Change of variables in one dimension) Let $X$ be a random variable with PDF $f_X$, and let $Y=g(X)$, where $g$ is differentiable and monotonic. Then the PDF of $Y$ is given by:
 $$f_Y(y)=f_X(x)|\frac{dx}{dy}|$$
 where $x=g^-1(y)$. The support of Y is all $g(x)$ with $x$ in the support of $X$.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt;&lt;/p&gt;
