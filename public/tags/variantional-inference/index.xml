@@ -8,11 +8,11 @@
         <language>en-us</language>
         <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/tags/variantional-inference/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Bayes&#39; Theory and Bayesian Inference</title>
-        <link>https://example.org/post/gatk_vqsr/</link>
+        <link>https://example.org/post/bayes_theory/</link>
         <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://example.org/post/gatk_vqsr/</guid>
-        <description>&lt;h2 id=&#34;law-of-total-probability&#34;&gt;Law of total probability
+        <guid>https://example.org/post/bayes_theory/</guid>
+        <description>&lt;img src="https://example.org/post/bayes_theory/Minecraft_view.jpg" alt="Featured image of post Bayes&#39; Theory and Bayesian Inference" /&gt;&lt;h2 id=&#34;law-of-total-probability&#34;&gt;Law of total probability
 &lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s say we have a set of mutually exclusive probable events ${B_i : i=1,2,3,&amp;hellip;,n }$. The sum of the probabilities of these events is equal to 1, i.e. $$\sum_i P(B_i)=1$$&lt;/p&gt;
 &lt;p&gt;Now, if we have another event $A$, we can express the probability of $A$ in terms of the probabilities of $B_i$ and the conditional probabilities of $A$ given $B_i$. This is known as the law of total probability:
 $$P(A)=\sum_i P(A|B_i)P(B_i)$$&lt;/p&gt;

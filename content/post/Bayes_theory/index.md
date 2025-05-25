@@ -4,7 +4,7 @@ draft = false
 title = "Bayes' Theory and Bayesian Inference"
 math = true
 tags = ['Variantional Inference']
-image = ""
+image = "Minecraft_view.jpg"
 +++
 
 ## Law of total probability
