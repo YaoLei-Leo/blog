@@ -2,17 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Leo&#39;s sharing space</title>
-        <link>http://localhost:1313/</link>
+        <link>https://example.org/</link>
         <description>Recent content on Leo&#39;s sharing space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 14 May 2025 15:10:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Bayes&#39; Theory and Bayesian Inference</title>
+        <link>https://example.org/post/gatk_vqsr/</link>
+        <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.org/post/gatk_vqsr/</guid>
+        <description>&lt;h2 id=&#34;law-of-total-probability&#34;&gt;Law of total probability
+&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s say we have a set of mutually exclusive probable events ${B_i : i=1,2,3,&amp;hellip;,n }$. The sum of the probabilities of these events is equal to 1, i.e. $$\sum_i P(B_i)=1$$&lt;/p&gt;
+&lt;p&gt;Now, if we have another event $A$, we can express the probability of $A$ in terms of the probabilities of $B_i$ and the conditional probabilities of $A$ given $B_i$. This is known as the law of total probability:
+$$P(A)=\sum_i P(A|B_i)P(B_i)$$&lt;/p&gt;
+&lt;p&gt;Here, as the sum of the probabilities of $B_i$ is equal to 1. The event $A$ must happen in at least one of the $B_i$ events, or the $P(A)$ is equal to 0. We can understand this as the probability of $A$ is the sum of the probabilities of $A$ happening in each of the mutually exclusive events $B_i$.&lt;/p&gt;
+&lt;h2 id=&#34;bayes-rule&#34;&gt;Bayes&amp;rsquo; rule
+&lt;/h2&gt;&lt;p&gt;For any specific event $B_j$, the probability of both event $A$ and $B_j$ happending is $$P(A,B_j)=P(A|B_j)P(B_j)$$&lt;/p&gt;
+&lt;p&gt;Also, we can express the same probability in terms of the conditional probability of $B_j$ given $A$:
+$$P(A,B_j)=P(B_j|A)P(A)$$&lt;/p&gt;
+&lt;p&gt;Therefore, we can write get this formula:
+$$P(A,B_j)=P(A|B_j)P(B_j)=P(B_j|A)P(A)$$&lt;/p&gt;
+&lt;p&gt;Here comes the Bayes&amp;rsquo; rule:
+$$P(A|B_j)=\frac{P(B_j|A)P(A)}{P(B_j)} \tag{1}$$
+$$or$$
+$$P(B_j|A)=\frac{P(A|B_j)P(B_j)}{P(A)}$$&lt;/p&gt;
+&lt;p&gt;Using the formula (1) as example, we call the $P(A)$ as the prior probability of event $A$ happening. The $P(A|B_j)$ is the posterior probability of event $A$ given that event $B_j$ has happened. The $P(B_j|A)$ is the likelihood of event $B_j$ given that event $A$ has happened. The $P(B_j)$ is the marginal probability of event $B_j$.&lt;/p&gt;
+&lt;h2 id=&#34;bayesian-inference&#34;&gt;Bayesian inference
+&lt;/h2&gt;&lt;p&gt;Bayesian inference is a method of statistical inference in which Bayes&amp;rsquo; theorem is used to update the probability for a hypothesis as more evidence or information becomes available. In Bayesian inference, we start with a prior distribution, which represents our beliefs about the parameters before observing any data. After observing the data, we update our beliefs using Bayes&amp;rsquo; rule to obtain the posterior distribution.&lt;/p&gt;
+&lt;p&gt;Using the formula (1) as example, $P(A)$ is the prior distribution of event $A$, when we represents our beliefs about the parameters before observing any data. The $P(B_j|A)$ is the likelihood of event $B_j$ given that event $A$ has happened. The $P(B_j)$ is the marginal distribution of event $B_j$. We update our beliefs about the $P(A)$ by observing the data $B_j$ and using Bayes&amp;rsquo; rule to get the posterior probability distribution $P(A|B_j)$.&lt;/p&gt;
+&lt;p&gt;There are many types of prior distributions, and also many types of likelihood functions. The choice of prior distribution and likelihood function depends on the problem at hand and the available data. Some combination of prior distribution and likelihood function can lead to a closed-form solution, which means we can derive the exact formula for the posterior distribution, while others may require numerical methods such as Markov Chain Monte Carlo (MCMC) to approximate the posterior distribution. Here, we first introduce the closed-form cases, and then introduce the numerical methods.&lt;/p&gt;
+&lt;h3 id=&#34;closed-form-solutions-conjugate-priors&#34;&gt;Closed-form solutions: conjugate priors
+&lt;/h3&gt;&lt;h4 id=&#34;beta-prior-and-binomial-likelihood&#34;&gt;Beta prior and binomial likelihood
+&lt;/h4&gt;&lt;p&gt;The Beta distribution is a conjugate prior for the binomial likelihood. If we have a binomial likelihood $P(X=k|p)=\binom{n}{k}p^k(1-p)^{n-k}$, where $X$ is the number of successes in $n$ trials and $p$ is the probability of success, we can use a Beta prior $P(p|\alpha,\beta)=\frac{1}{B(\alpha,\beta)}p^{\alpha-1}(1-p)^{\beta-1}$, where $\alpha$ and $\beta$ are the shape parameters of the Beta distribution.&lt;/p&gt;
+&lt;p&gt;Using Bayes&amp;rsquo; rule, we can derive the posterior distribution:
+$$P(p|X=k)=\frac{P(X=k|p)P(p)}{P(X=k)}$$
+Substituting the binomial likelihood and Beta prior, we get:
+$$P(p|X=k)=\frac{\binom{n}{k}p^k(1-p)^{n-k}\frac{1}{B(\alpha,\beta)}p^{\alpha-1}(1-p)^{\beta-1}}{P(X=k)} \tag{2}$$&lt;/p&gt;
+&lt;p&gt;The numerator of the equation (2) can be simplified as:
+$$P(p|X=k)=\frac{1}{B(\alpha,\beta)}\binom{n}{k}p^{k+\alpha-1}(1-p)^{n-k+\beta-1}$$&lt;/p&gt;
+&lt;p&gt;Here, the posterior distribution is a function of $p$. The constant $\frac{1}{B(\alpha,\beta)}$, $(_k^n)$, and the $P(X=k)$ are all constants with respect to $p$. Therefore, we can first ignore them when we are only interested in the shape of the posterior distribution. Therefore, we can write the posterior distribution as:
+$$P(p|X=k) \propto p^{k+\alpha-1}(1-p)^{n-k+\beta-1} \tag{3}$$&lt;/p&gt;
+&lt;p&gt;Here comes the magic part, the posterior distribution is similar to the PDF pf Beta distribution, with the shape parameters $\alpha&amp;rsquo; = k + \alpha$ and $\beta&amp;rsquo; = n - k + \beta$:
+$$\beta(k+\alpha, n-k+\beta)=\frac{1}{B(k+\alpha,n-k+\beta)}p^{k+\alpha-1}(1-p)^{n-k+\beta}$$&lt;/p&gt;
+&lt;p&gt;But missing the Beta function $\frac{1}{B(k+\alpha,n-k+\beta)}$. Interestly, the formula (3) tells us that the posterior distribution is proportional to the $p^{k+\alpha-1}(1-p)^{n-k+\beta-1}$, the constant parts are ignored. In fact, the true posterior distribution should be:
+$$P(p|X=k) = constant \cdot p^{k+\alpha-1}(1-p)^{n-k+\beta-1}$$&lt;/p&gt;
+&lt;p&gt;To get the constant. We can use the characteristics of a PDF that the integral of the PDF is equal to 1:
+$$\int_0^1 P(p|X=k)dp = 1$$
+This integral can be solved as:
+$$\int_0^1 p^{k+\alpha-1}(1-p)^{n-k+\beta-1}dp = B(k+\alpha, n-k+\beta)$$
+Therefore, we can get the constant:
+$$constant = \frac{1}{B(k+\alpha, n-k+\beta)}$$
+Thus, the posterior distribution is:
+$$P(p|X=k) = \frac{1}{B(k+\alpha, n-k+\beta)}p^{k+\alpha-1}(1-p)^{n-k+\beta-1}$$&lt;/p&gt;
+&lt;p&gt;Now, we can see that the posterior distribution is a Beta distribution with shape parameters $\alpha&amp;rsquo; = k + \alpha$ and $\beta&amp;rsquo; = n - k + \beta$. This is the closed-form solution for the posterior distribution when using a Beta prior and a binomial likelihood. And this is the reason why we call the Beta distribution a conjugate prior for the binomial likelihood.&lt;/p&gt;
+&lt;h4 id=&#34;normal-prior-and-normal-likelihood&#34;&gt;Normal prior and normal likelihood
+&lt;/h4&gt;</description>
+        </item>
+        <item>
         <title>Beta distribution</title>
-        <link>http://localhost:1313/post/beta_distribution/</link>
+        <link>https://example.org/post/beta_distribution/</link>
         <pubDate>Wed, 14 May 2025 15:10:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/beta_distribution/</guid>
-        <description>&lt;img src="http://localhost:1313/post/beta_distribution/logcabin.jpg" alt="Featured image of post Beta distribution" /&gt;&lt;h2 id=&#34;beta-distribution&#34;&gt;Beta distribution
+        <guid>https://example.org/post/beta_distribution/</guid>
+        <description>&lt;img src="https://example.org/post/beta_distribution/logcabin.jpg" alt="Featured image of post Beta distribution" /&gt;&lt;h2 id=&#34;beta-distribution&#34;&gt;Beta distribution
 &lt;/h2&gt;&lt;p&gt;The Beta distribution is a continuous distribution on the interval (0,1). It is a generalization of the Unif(0,1) distribution.&lt;/p&gt;
 &lt;p&gt;An random variable $X$ is said to have the Beta distribution with parameters $a$ and $b$, where $a,b &amp;gt; 0$, if its probability density function (PDF) is:&lt;/p&gt;
 &lt;p&gt;$$f(x)=\frac{1}{\beta(a,b)}x^{a-1}(1-x)^{b-1},\quad0&amp;lt;x&amp;lt;1$$&lt;/p&gt;
@@ -66,11 +119,11 @@ $$=\frac{(_k^n)p^k(1-p)^{n-k}\cdot\frac{1}{\beta(a,b)}p^{a-1}(1-p)^{b-1}}{\int_0
         </item>
         <item>
         <title>LOTUS</title>
-        <link>http://localhost:1313/post/lotus/</link>
+        <link>https://example.org/post/lotus/</link>
         <pubDate>Wed, 14 May 2025 15:10:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/lotus/</guid>
-        <description>&lt;img src="http://localhost:1313/post/lotus/windmill.png" alt="Featured image of post LOTUS" /&gt;&lt;h2 id=&#34;definition-of-expectation&#34;&gt;Definition of expectation
+        <guid>https://example.org/post/lotus/</guid>
+        <description>&lt;img src="https://example.org/post/lotus/windmill.png" alt="Featured image of post LOTUS" /&gt;&lt;h2 id=&#34;definition-of-expectation&#34;&gt;Definition of expectation
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Definition (Expectation of a discrete random variable)&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -135,11 +188,11 @@ This is a analytically solvable integral. The result is $0$ because the integran
         </item>
         <item>
         <title>Change_of_variables</title>
-        <link>http://localhost:1313/post/change_of_variables/</link>
+        <link>https://example.org/post/change_of_variables/</link>
         <pubDate>Wed, 14 May 2025 14:35:45 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/change_of_variables/</guid>
-        <description>&lt;img src="http://localhost:1313/post/change_of_variables/House.png" alt="Featured image of post Change_of_variables" /&gt;&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Change of variables in one dimension) Let $X$ be a random variable with PDF $f_X$, and let $Y=g(X)$, where $g$ is differentiable and monotonic. Then the PDF of $Y$ is given by:
+        <guid>https://example.org/post/change_of_variables/</guid>
+        <description>&lt;img src="https://example.org/post/change_of_variables/House.png" alt="Featured image of post Change_of_variables" /&gt;&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Change of variables in one dimension) Let $X$ be a random variable with PDF $f_X$, and let $Y=g(X)$, where $g$ is differentiable and monotonic. Then the PDF of $Y$ is given by:
 $$f_Y(y)=f_X(x)|\frac{dx}{dy}|$$
 where $x=g^-1(y)$. The support of Y is all $g(x)$ with $x$ in the support of $X$.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt;&lt;/p&gt;
@@ -164,11 +217,11 @@ where $x=g^-1(y)$. The support of Y is all $g(x)$ with $x$ in the support of $X$
         </item>
         <item>
         <title>Taylor Expansion / Series and Power Series</title>
-        <link>http://localhost:1313/post/taylor_expansion/</link>
+        <link>https://example.org/post/taylor_expansion/</link>
         <pubDate>Tue, 13 May 2025 20:14:20 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/taylor_expansion/</guid>
-        <description>&lt;img src="http://localhost:1313/post/taylor_expansion/Figure.jpg" alt="Featured image of post Taylor Expansion / Series and Power Series" /&gt;&lt;h2 id=&#34;taylor-expansion--series&#34;&gt;Taylor Expansion / Series
+        <guid>https://example.org/post/taylor_expansion/</guid>
+        <description>&lt;img src="https://example.org/post/taylor_expansion/Figure.jpg" alt="Featured image of post Taylor Expansion / Series and Power Series" /&gt;&lt;h2 id=&#34;taylor-expansion--series&#34;&gt;Taylor Expansion / Series
 &lt;/h2&gt;&lt;p&gt;In mathematics, the Taylor expansion / series of a function is an infinite sum of terms that are expressed in terms of the function&amp;rsquo;s derivatives at a single point. For most common functions, the function and the sum of its Taylor series are equal near this point.&lt;/p&gt;
 &lt;p&gt;Suppose $f(x)$ is a real or composite function, which is a differentiable function of a neighborhood of the point $a$. The Taylor series of $f(x)$ about the point $a$ is given by:&lt;/p&gt;
 &lt;p&gt;$$f(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime\prime}(a)}{2!}(x-a)^2+\frac{f^{\prime\prime\prime}(a)}{3!}(x-a)^3+\dots$$&lt;/p&gt;
@@ -238,11 +291,11 @@ $$f(x)=\sum_{n=0}^\infin\frac{f^{(n)}(0)}{n!}(x)^n=\sum_{n=0}^\infin\frac{(-1)^n
         </item>
         <item>
         <title>Moments in Probability</title>
-        <link>http://localhost:1313/post/moments/</link>
+        <link>https://example.org/post/moments/</link>
         <pubDate>Tue, 13 May 2025 00:53:25 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/moments/</guid>
-        <description>&lt;img src="http://localhost:1313/post/moments/Minecraft_DH.png" alt="Featured image of post Moments in Probability" /&gt;&lt;h2 id=&#34;moments-in-probability&#34;&gt;Moments in Probability
+        <guid>https://example.org/post/moments/</guid>
+        <description>&lt;img src="https://example.org/post/moments/Minecraft_DH.png" alt="Featured image of post Moments in Probability" /&gt;&lt;h2 id=&#34;moments-in-probability&#34;&gt;Moments in Probability
 &lt;/h2&gt;&lt;p&gt;For a random variable $X$, The $n$-th moments of $X$ is the expectation of $X^n$, which is $\mathbb{E}[X^n]$.&lt;/p&gt;
 &lt;p&gt;Why we need moment? Let’s starts with some measures we often use to describe a distribution.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Mean:&lt;/strong&gt; $\mu=\mathbb{E}[X]$. &lt;em&gt;Mean&lt;/em&gt; measures the central tendency. It tells us something about the center of a distribution. It is the $1$-th moment of $X$.&lt;/p&gt;
@@ -288,66 +341,34 @@ $$\mathbb{E}[X^n]=M^{(n)}(0)$$&lt;/p&gt;
         </item>
         <item>
         <title>Archives</title>
-        <link>http://localhost:1313/page/archives/</link>
+        <link>https://example.org/page/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/archives/</guid>
+        <guid>https://example.org/page/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>About</title>
-        <link>http://localhost:1313/page/about/</link>
+        <link>https://example.org/page/about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/about/</guid>
-        <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
-&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
-&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
-&lt;p&gt;Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
-&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
+        <guid>https://example.org/page/about/</guid>
+        <description></description>
         </item>
         <item>
         <title>Links</title>
-        <link>http://localhost:1313/page/links/</link>
+        <link>https://example.org/page/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/links/</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;links&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;GitHub&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;website&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://github.com&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;TypeScript&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;website&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;ts-logo-128.jpg&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
-</description>
+        <guid>https://example.org/page/links/</guid>
+        <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:1313/page/search/</link>
+        <link>https://example.org/page/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/search/</guid>
+        <guid>https://example.org/page/search/</guid>
         <description></description>
         </item>
         

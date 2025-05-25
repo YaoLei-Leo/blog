@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Moments on Leo&#39;s sharing space</title>
-        <link>http://localhost:1313/tags/moments/</link>
+        <link>https://example.org/tags/moments/</link>
         <description>Recent content in Moments on Leo&#39;s sharing space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 13 May 2025 00:53:25 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/moments/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 13 May 2025 00:53:25 +0800</lastBuildDate><atom:link href="https://example.org/tags/moments/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Moments in Probability</title>
-        <link>http://localhost:1313/post/moments/</link>
+        <link>https://example.org/post/moments/</link>
         <pubDate>Tue, 13 May 2025 00:53:25 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/moments/</guid>
-        <description>&lt;img src="http://localhost:1313/post/moments/Minecraft_DH.png" alt="Featured image of post Moments in Probability" /&gt;&lt;h2 id=&#34;moments-in-probability&#34;&gt;Moments in Probability
+        <guid>https://example.org/post/moments/</guid>
+        <description>&lt;img src="https://example.org/post/moments/Minecraft_DH.png" alt="Featured image of post Moments in Probability" /&gt;&lt;h2 id=&#34;moments-in-probability&#34;&gt;Moments in Probability
 &lt;/h2&gt;&lt;p&gt;For a random variable $X$, The $n$-th moments of $X$ is the expectation of $X^n$, which is $\mathbb{E}[X^n]$.&lt;/p&gt;
 &lt;p&gt;Why we need moment? Let’s starts with some measures we often use to describe a distribution.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Mean:&lt;/strong&gt; $\mu=\mathbb{E}[X]$. &lt;em&gt;Mean&lt;/em&gt; measures the central tendency. It tells us something about the center of a distribution. It is the $1$-th moment of $X$.&lt;/p&gt;

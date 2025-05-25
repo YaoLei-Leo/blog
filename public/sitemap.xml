@@ -2,61 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.org/</loc>
+    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/post/gatk_vqsr/</loc>
+    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/post/</loc>
+    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/tags/</loc>
+    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/tags/variantional-inference/</loc>
+    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/post/beta_distribution/</loc>
     <lastmod>2025-05-14T15:10:48+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/beta_distribution/</loc>
+    <loc>https://example.org/tags/distribution/</loc>
     <lastmod>2025-05-14T15:10:48+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/distribution/</loc>
+    <loc>https://example.org/tags/lotus/</loc>
     <lastmod>2025-05-14T15:10:48+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lotus/</loc>
+    <loc>https://example.org/post/lotus/</loc>
     <lastmod>2025-05-14T15:10:48+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/lotus/</loc>
-    <lastmod>2025-05-14T15:10:48+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2025-05-14T15:10:48+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-14T15:10:48+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/change-of-variables/</loc>
+    <loc>https://example.org/tags/change-of-variables/</loc>
     <lastmod>2025-05-14T14:35:45+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/change_of_variables/</loc>
+    <loc>https://example.org/post/change_of_variables/</loc>
     <lastmod>2025-05-14T14:35:45+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/expansion/</loc>
+    <loc>https://example.org/tags/expansion/</loc>
     <lastmod>2025-05-13T20:14:20+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/series/</loc>
+    <loc>https://example.org/tags/series/</loc>
     <lastmod>2025-05-13T20:14:20+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/taylor_expansion/</loc>
+    <loc>https://example.org/post/taylor_expansion/</loc>
     <lastmod>2025-05-13T20:14:20+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/moments/</loc>
+    <loc>https://example.org/tags/moments/</loc>
     <lastmod>2025-05-13T00:53:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/moments/</loc>
+    <loc>https://example.org/post/moments/</loc>
     <lastmod>2025-05-13T00:53:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/page/archives/</loc>
+    <loc>https://example.org/page/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/page/</loc>
+    <loc>https://example.org/page/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/page/about/</loc>
+    <loc>https://example.org/page/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.org/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/page/links/</loc>
+    <loc>https://example.org/page/links/</loc>
   </url><url>
-    <loc>http://localhost:1313/page/search/</loc>
+    <loc>https://example.org/page/search/</loc>
   </url>
 </urlset>

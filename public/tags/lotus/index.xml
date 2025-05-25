@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>LOTUS on Leo&#39;s sharing space</title>
-        <link>http://localhost:1313/tags/lotus/</link>
+        <link>https://example.org/tags/lotus/</link>
         <description>Recent content in LOTUS on Leo&#39;s sharing space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 14 May 2025 15:10:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/lotus/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 14 May 2025 15:10:48 +0800</lastBuildDate><atom:link href="https://example.org/tags/lotus/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>LOTUS</title>
-        <link>http://localhost:1313/post/lotus/</link>
+        <link>https://example.org/post/lotus/</link>
         <pubDate>Wed, 14 May 2025 15:10:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/lotus/</guid>
-        <description>&lt;img src="http://localhost:1313/post/lotus/windmill.png" alt="Featured image of post LOTUS" /&gt;&lt;h2 id=&#34;definition-of-expectation&#34;&gt;Definition of expectation
+        <guid>https://example.org/post/lotus/</guid>
+        <description>&lt;img src="https://example.org/post/lotus/windmill.png" alt="Featured image of post LOTUS" /&gt;&lt;h2 id=&#34;definition-of-expectation&#34;&gt;Definition of expectation
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Definition (Expectation of a discrete random variable)&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;

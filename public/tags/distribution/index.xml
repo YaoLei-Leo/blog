@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Distribution on Leo&#39;s sharing space</title>
-        <link>http://localhost:1313/tags/distribution/</link>
+        <link>https://example.org/tags/distribution/</link>
         <description>Recent content in Distribution on Leo&#39;s sharing space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 14 May 2025 15:10:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/distribution/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 14 May 2025 15:10:48 +0800</lastBuildDate><atom:link href="https://example.org/tags/distribution/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Beta distribution</title>
-        <link>http://localhost:1313/post/beta_distribution/</link>
+        <link>https://example.org/post/beta_distribution/</link>
         <pubDate>Wed, 14 May 2025 15:10:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/beta_distribution/</guid>
-        <description>&lt;img src="http://localhost:1313/post/beta_distribution/logcabin.jpg" alt="Featured image of post Beta distribution" /&gt;&lt;h2 id=&#34;beta-distribution&#34;&gt;Beta distribution
+        <guid>https://example.org/post/beta_distribution/</guid>
+        <description>&lt;img src="https://example.org/post/beta_distribution/logcabin.jpg" alt="Featured image of post Beta distribution" /&gt;&lt;h2 id=&#34;beta-distribution&#34;&gt;Beta distribution
 &lt;/h2&gt;&lt;p&gt;The Beta distribution is a continuous distribution on the interval (0,1). It is a generalization of the Unif(0,1) distribution.&lt;/p&gt;
 &lt;p&gt;An random variable $X$ is said to have the Beta distribution with parameters $a$ and $b$, where $a,b &amp;gt; 0$, if its probability density function (PDF) is:&lt;/p&gt;
 &lt;p&gt;$$f(x)=\frac{1}{\beta(a,b)}x^{a-1}(1-x)^{b-1},\quad0&amp;lt;x&amp;lt;1$$&lt;/p&gt;
