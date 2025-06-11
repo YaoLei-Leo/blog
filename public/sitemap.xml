@@ -3,24 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://example.org/</loc>
-    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/post/bayes_theory/</loc>
-    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+    <loc>https://example.org/tags/distribution/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/post/distributions/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/post/</loc>
-    <lastmod>2025-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/tags/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/post/bayes_theory/</loc>
     <lastmod>2025-05-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/tags/variantional-inference/</loc>
     <lastmod>2025-05-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/post/beta_distribution/</loc>
-    <lastmod>2025-05-14T15:10:48+08:00</lastmod>
-  </url><url>
-    <loc>https://example.org/tags/distribution/</loc>
     <lastmod>2025-05-14T15:10:48+08:00</lastmod>
   </url><url>
     <loc>https://example.org/tags/lotus/</loc>
